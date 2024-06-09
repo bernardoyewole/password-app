@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border-style: none;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+html, body {
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", "sans-serif", Arial, sans-serif;
+    line-height: 1.4;
+    background-color: #0D1117;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+.app-container {
+    background-image: linear-gradient(to right top, #051937, #004066, #006a73, #009055, #7cae0c);
+    padding: 60px 30px;
+    border-radius: 16px;
+    width: 293.6px;
+    /* border: 1px solid rgb(255 255 255 / 30%); */
+}
+
+.numbers-container {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 90%;
+    margin-inline: auto;
+    padding-top: 40px;
+}
+
+.numbers-container :last-child {
+    grid-column: span 3;
+    /* justify-self: center; */
+}
+
+section {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.number {
+    color: #fff;
+    font-size: 24px;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255 255 255 / 10%);
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+.number:hover {
+    background-color: rgb(255 255 255 / 7%);
+}
+
+form {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+input {
+    width: 70%;   
+    background-color: rgb(255 255 255 / 10%);
+    border-radius: 30px;
+    text-align: center;
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid rgb(255 255 255 / 10%);
+}
+
+.error
+{
+    animation: shake 0.2s ease-in-out 0s 2;
+}
+
+@keyframes shake {
+    0% { margin-left: 0rem; }
+    25% { margin-left: 0.5rem; }
+    75% { margin-left: -0.5rem; }
+    100% { margin-left: 0rem; }
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+    font-size: 28px;
+    position: absolute; /* Ensure it overlays correctly */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.not-hidden, .visible {
+    overflow: hidden;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+
+.hidden, .not-visible {
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
