@@ -18,6 +18,7 @@ function App() {
   const compareToPassword = () => {
     if (userInput.join('') !== password) {
       inputRef.current.classList.add('error');
+      inputRef.current.placeholder = 'try again';
     } else {
       setState({ isHidden: true, isVisible: true });
     }
@@ -41,7 +42,7 @@ function App() {
         </div>
         <div className={`lock-screen ${state.isHidden ? 'hidden' : 'not-hidden'}`}>
           <form>
-            <input type='password' readOnly value={userInput.join('')} ref={inputRef} />
+            <input type='password' readOnly value={userInput.join('')} ref={inputRef} placeholder='Passcode' />
           </form>
           <div className='numbers-container'>
             {numbers.map((number, index) => (
